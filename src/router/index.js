@@ -16,6 +16,11 @@ const routes = [
         path: '/owner/findcar',
         name: 'findcar',
         component: () => import('@/views/owner/FindCarView')
+      },
+      {
+        path: '/owner/heTongChongZhang',
+        name: 'heTongChongZhang',
+        component: () => import('@/views/owner/heTongChongZhang')
       }
     ]
   }, {
