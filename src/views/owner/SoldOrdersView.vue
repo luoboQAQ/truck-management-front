@@ -30,19 +30,21 @@ export default {
           cParameter: '17.5/13.7米 | 高低板',
           cGoodNum: 5,
           cBadNum: 4,
-          cMax: 20
+          cMax: 20,
+          cName: '丁超'
         },
         {
-          aStart: '常州 你爹',
-          aEnd: '宿迁 我儿',
-          aDistance: 396,
+          aStart: '江苏 南京',
+          aEnd: '江苏 扬州',
+          aDistance: 388,
           aTransdate: '2022-06-30T11:45:19+08:00',
           aCreatdate: '2022-06-10T11:45:19+08:00',
-          cLicense: '苏LUS837',
+          cLicense: '苏AUS837',
           cParameter: '17.5/13.7米 | 高低板',
-          cGoodNum: 5,
-          cBadNum: 4,
-          cMax: 20
+          cGoodNum: 2,
+          cBadNum: 1,
+          cMax: 20,
+          cName: '王二'
         }
       ],
       loading: false,

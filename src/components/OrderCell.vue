@@ -30,7 +30,7 @@
             />
           </van-col>
           <van-col style="margin-left: 5px;color: #736E68;font-size: 12px;">
-            丁超
+            {{ data.cName }}
           </van-col>
           <br />
           <van-col style="margin-left: 5px;">
@@ -42,17 +42,13 @@
         </van-row>
       </van-col>
       <van-col span="6" style="text-align:right;">
-        <van-button type="primary">报表录入</van-button>
+        <van-button type="primary" to="entryreport">详细信息</van-button>
       </van-col>
     </van-row>
   </van-cell>
 </template>
 
 <script>
-import moment from 'moment'
-
-moment.locale('zh-cn')
-
 export default {
   name: 'OrderCell',
   props: {
@@ -70,7 +66,8 @@ export default {
           cParameter: '17.5/13.7米 | 高低板',
           cGoodNum: 5,
           cBadNum: 4,
-          cMax: 20
+          cMax: 20,
+          cName: '丁超'
         }
       }
     }
