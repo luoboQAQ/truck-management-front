@@ -21,6 +21,11 @@ const routes = [
         path: '/owner/soldorders',
         name: 'soldorders',
         component: () => import('@/views/owner/SoldOrdersView')
+      },
+      {
+        path: '/owner/entryreport',
+        name: 'entryreport',
+        component: () => import('@/views/owner/EntryReportView')
       }
     ]
   }, {

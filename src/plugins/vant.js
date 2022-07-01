@@ -4,6 +4,7 @@ import {
   Cell,
   CellGroup,
   Col,
+  Dialog,
   Field,
   Form,
   Grid,
@@ -12,6 +13,7 @@ import {
   Image as VanImage,
   List,
   PullRefresh,
+  Rate,
   Row,
   Tab,
   Tabs,
@@ -34,3 +36,5 @@ Vue.use(Icon)
 Vue.use(Tag)
 Vue.use(Form)
 Vue.use(Field)
+Vue.use(Dialog)
+Vue.use(Rate)
