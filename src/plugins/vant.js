@@ -13,8 +13,14 @@ import {
   Row,
   Image as VanImage,
   Icon,
-  Tag
+  Tag,
+  Search,
+  DatetimePicker,
+  Popup,
+  Dialog,
+  Field
 } from 'vant'
+
 // 按需引入UI组件
 Vue.use(Button)
 Vue.use(Tab)
@@ -30,3 +36,8 @@ Vue.use(Row)
 Vue.use(VanImage)
 Vue.use(Icon)
 Vue.use(Tag)
+Vue.use(Search)
+Vue.use(DatetimePicker)
+Vue.use(Popup)
+Vue.use(Dialog)
+Vue.use(Field)
