@@ -1,18 +1,20 @@
 import Vue from 'vue'
 import {
   Button,
-  Tab,
-  Tabs,
-  Grid,
-  GridItem,
-  PullRefresh,
-  List,
   Cell,
   CellGroup,
   Col,
-  Row,
-  Image as VanImage,
+  Field,
+  Form,
+  Grid,
+  GridItem,
   Icon,
+  Image as VanImage,
+  List,
+  PullRefresh,
+  Row,
+  Tab,
+  Tabs,
   Tag
 } from 'vant'
 // 按需引入UI组件
@@ -30,3 +32,5 @@ Vue.use(Row)
 Vue.use(VanImage)
 Vue.use(Icon)
 Vue.use(Tag)
+Vue.use(Form)
+Vue.use(Field)
