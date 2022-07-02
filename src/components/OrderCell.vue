@@ -34,10 +34,10 @@
           </van-col>
           <br />
           <van-col style="margin-left: 5px;">
-            <van-tag plain type="primary">好评{{ data.cGoodNum }}次</van-tag>
+            <van-tag plain type="primary">好评{{ data.cGoodnum }}次</van-tag>
           </van-col>
           <van-col style="margin-left: 5px;">
-            <van-tag plain type="primary">差评{{ data.cBadNum }}次</van-tag>
+            <van-tag plain type="primary">差评{{ data.cBadnum }}次</van-tag>
           </van-col>
         </van-row>
       </van-col>
@@ -64,8 +64,8 @@ export default {
           aCreatdate: '2022-06-29T11:45:19+08:00',
           cLicense: '苏LUS837',
           cParameter: '17.5/13.7米 | 高低板',
-          cGoodNum: 5,
-          cBadNum: 4,
+          cGoodnum: 5,
+          cBadnum: 4,
           cMax: 20,
           cName: '丁超'
         }

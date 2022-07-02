@@ -17,7 +17,8 @@ import {
   Row,
   Tab,
   Tabs,
-  Tag
+  Tag,
+  Toast
 } from 'vant'
 // 按需引入UI组件
 Vue.use(Button)
@@ -38,3 +39,4 @@ Vue.use(Form)
 Vue.use(Field)
 Vue.use(Dialog)
 Vue.use(Rate)
+Vue.use(Toast)
