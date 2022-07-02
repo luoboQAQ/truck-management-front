@@ -42,7 +42,7 @@
         </van-row>
       </van-col>
       <van-col span="6" style="text-align:right;">
-        <van-button type="primary" to="entryreport">详细信息</van-button>
+        <van-button type="primary" :to="{name:'entryreport',params:{sId: data.sId}}">详细信息</van-button>
       </van-col>
     </van-row>
   </van-cell>

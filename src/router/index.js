@@ -25,6 +25,7 @@ const routes = [
       {
         path: '/owner/entryreport',
         name: 'entryreport',
+        props: true,
         component: () => import('@/views/owner/EntryReportView')
       }
     ]
