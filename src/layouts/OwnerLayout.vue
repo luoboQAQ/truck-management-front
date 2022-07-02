@@ -1,20 +1,35 @@
 <template>
-  <div>
+  <nav>
     <van-grid :column-num="3" :clickable="true">
-      <van-grid-item text="寻找车辆" to="findcar" />
-      <van-grid-item text="成交订单" to="soldorders" />
+      <van-grid-item text="寻找车辆" to="findcar" :class="{choose: activePage === 1}" />
+      <van-grid-item text="成交订单" to="soldorders" :class="{choose: activePage === 2}"/>
       <van-grid-item text="申请资金" />
       <van-grid-item text="支付资金" />
       <van-grid-item text="签收回单" />
       <van-grid-item text="合同冲账" />
     </van-grid>
     <router-view />
-  </div>
+  </nav>
 </template>
 
 <script>
 export default {
-  name: 'OwnerLayout'
+  name: 'OwnerLayout',
+  computed: {
+    activePage () {
+      const name = this.$route.name
+      let page = 0
+      switch (name) {
+        case 'findcar':
+          page = 1
+          break
+        case 'soldorders':
+          page = 2
+          break
+      }
+      return page
+    }
+  }
 }
 </script>
 
@@ -25,10 +40,23 @@ export default {
 
 /deep/ .van-grid-item__text {
   color: white;
+  font-size: 14px;
 }
 
-/deep/ .van-grid-item__content--clickable:active{
+/deep/ .van-grid-item__content--clickable:active {
   background-color: green;
 }
 
+/deep/ .choose {
+  div {
+    border-style: solid;
+    border-color: #8cf062;
+    border-width: 0 0 2px;
+
+    span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
 </style>
