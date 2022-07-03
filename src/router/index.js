@@ -44,6 +44,12 @@ const routes = [
         path: '/carer/findgood',
         name: 'findgood',
         component: () => import('@/views/carer/FindGoodView')
+      },
+      {
+        path: '/carer/receiveorder',
+        name: 'receiveorder',
+        props: true,
+        component: () => import('@/views/carer/ReceiveOrderView')
       }
     ]
   }

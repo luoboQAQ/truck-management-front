@@ -7,7 +7,12 @@
     <van-row type="flex" align="bottom">
       <van-col span="12" class="time">{{ data.aTransdate | moment('LLL') }}</van-col>
       <van-col span="4" offset="6">
-        <van-button block type="primary">接单</van-button>
+        <van-button
+          block
+          type="primary"
+          :to="{name:'receiveorder',params: {aId:data.aId,aRemnum:data.aRemnum}}">
+          接单
+        </van-button>
       </van-col>
     </van-row>
   </van-cell>

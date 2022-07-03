@@ -1,7 +1,7 @@
 <template>
   <nav>
     <van-grid :column-num="3" :clickable="true">
-      <van-grid-item text="寻找货源" />
+      <van-grid-item text="寻找货源" to="findgood"/>
       <van-grid-item text="成交订单" />
       <van-grid-item text="运输合同" />
       <van-grid-item text="最新收款" />
