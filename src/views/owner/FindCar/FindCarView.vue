@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <van-button type="primary" @click="go" size="large">信息录入</van-button>
+    </div>
     <van-list
         v-model="loading"
         :finished="finished"
@@ -9,9 +12,6 @@
     >
       <OrderCell v-for="(item,index) in list" :key="index" :data="item" />
     </van-list>
-    <div>
-      <van-button type="primary" @click="go" size="large">信息录入</van-button>
-    </div>
   </div>
 </template>
 
