@@ -68,7 +68,7 @@
         </thead>
         <tbody>
         <tr v-for="sum in sums" :key="sum.sid">
-          <van-checkbox v-model="checked[sum.sid]" :disabled="sum.photo==='补拍'" shape="square"/>
+          <van-checkbox v-model="checked[sum.sid]" :disabled="sum.sphoto==='补拍'" shape="square"/>
           <th scope="col">{{ sum.atransdate }}{{ sum.clicense }}</th>
           <th scope="col">{{ sum.sid }}</th>
           <th scope="col">{{ sum.snum }}</th>
