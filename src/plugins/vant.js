@@ -4,6 +4,7 @@ import {
   Calendar,
   Cell,
   CellGroup,
+  Checkbox,
   Col,
   Dialog,
   Field,
@@ -57,7 +58,6 @@ Vue.use(Field)
 Vue.use(Calendar)
 Vue.use(Step)
 Vue.use(Steps)
-Vue.use(Form)
+Vue.use(Checkbox)
 Vue.use(Picker)
-Vue.use(Popup)
 Vue.use(NoticeBar)
