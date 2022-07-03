@@ -61,7 +61,7 @@ export default {
         cheHao: '京A-00001',
         date: '1926-08-17',
         beginLoc: '上海',
-        endLoc: '北京',
+        endLoc: '理塘',
         heTongHao: 114,
         chengYunYunFei: 514,
         kouKuan: 1919,
