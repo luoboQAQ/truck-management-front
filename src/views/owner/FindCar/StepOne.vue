@@ -62,7 +62,7 @@ export default {
             }
           })
         } else {
-          Toast('用户名重复')
+          Toast('插入失败')
         }
       })
     }
