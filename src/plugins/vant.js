@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import {
   Button,
+  Calendar,
   Cell,
   CellGroup,
   Col,
@@ -10,6 +11,7 @@ import {
   Grid,
   GridItem,
   Icon,
+
   Image as VanImage,
   List,
   PullRefresh,
@@ -18,10 +20,17 @@ import {
   Tab,
   Tabs,
   Tag,
-  Toast
+  Toast,
+  Search,
+  Cascader,
+  Popup,
+  Steps,
+  Step
 } from 'vant'
 // 按需引入UI组件
 Vue.use(Button)
+Vue.use(Search)
+Vue.use(Cascader)
 Vue.use(Tab)
 Vue.use(Tabs)
 Vue.use(Grid)
@@ -40,3 +49,9 @@ Vue.use(Field)
 Vue.use(Dialog)
 Vue.use(Rate)
 Vue.use(Toast)
+Vue.use(Popup)
+Vue.use(Field)
+Vue.use(Calendar)
+Vue.use(Step)
+Vue.use(Steps)
+Vue.use(Form)
