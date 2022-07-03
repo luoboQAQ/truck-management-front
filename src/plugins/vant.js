@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import {
   Button,
+  Calendar,
   Cell,
   CellGroup,
+  Checkbox,
   Col,
   Dialog,
   Field,
@@ -26,6 +28,8 @@ Vue.use(Tab)
 Vue.use(Tabs)
 Vue.use(Grid)
 Vue.use(GridItem)
+Vue.use(Form)
+Vue.use(Field)
 Vue.use(PullRefresh)
 Vue.use(List)
 Vue.use(Cell)
@@ -40,3 +44,5 @@ Vue.use(Field)
 Vue.use(Dialog)
 Vue.use(Rate)
 Vue.use(Toast)
+Vue.use(Calendar)
+Vue.use(Checkbox)

@@ -18,6 +18,21 @@ const routes = [
         component: () => import('@/views/owner/FindCarView')
       },
       {
+        path: '/owner/fundapp',
+        name: 'fundapp',
+        component: () => import('@/views/owner/FundApplication')
+      },
+      {
+        path: '/owner/signback',
+        name: 'signback',
+        component: () => import('@/views/owner/SigningBack')
+      },
+      {
+        path: '/owner/signback2',
+        name: 'signback2',
+        component: () => import('@/views/owner/SigningBack2')
+      },
+      {
         path: '/owner/soldorders',
         name: 'soldorders',
         component: () => import('@/views/owner/SoldOrdersView')
