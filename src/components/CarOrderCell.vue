@@ -41,16 +41,24 @@
           </van-col>
         </van-row>
       </van-col>
-      <van-col span="6" style="text-align:right;">
-        <van-button type="primary" :to="{name:'entryreport',params:{sId: data.sId}}">详细信息</van-button>
+      <van-col span="5" style="text-align:right;">
+        <van-icon name="photograph" size="40" @click="show = (nextState!=null)" />
       </van-col>
     </van-row>
+    <van-dialog v-model="show" title="更新状态" show-cancel-button @confirm="updateSlip">
+      <div style="margin: 15px">
+        <p>当前状态为: {{ data.sState }}</p>
+        <p>是否要更新为：{{ nextState }}</p>
+      </div>
+    </van-dialog>
   </van-cell>
 </template>
 
 <script>
+import { updateSlips } from '@/api/slips'
+
 export default {
-  name: 'OrderCell',
+  name: 'CarOrderCell',
   props: {
     data: {
       type: Object,
@@ -67,13 +75,39 @@ export default {
           cGoodnum: 5,
           cBadnum: 4,
           cMax: 20,
-          cName: '丁超'
+          cName: '丁超',
+          sState: ''
         }
       }
     }
   },
   data () {
-    return {}
+    return {
+      show: false
+    }
+  },
+  methods: {
+    updateSlip () {
+      const slips = { sId: this.data.sId, sState: this.nextState }
+      updateSlips(slips).then(res => {
+        if (res.code === 200) {
+          this.$toast.success('更新成功')
+          this.$router.go(0)
+        }
+      })
+    }
+  },
+  computed: {
+    nextState () {
+      switch (this.data.sState) {
+        case '待出发':
+          return '运输中'
+        case '运输中':
+          return '未签收'
+        default:
+          return null
+      }
+    }
   }
 }
 </script>

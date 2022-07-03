@@ -25,7 +25,10 @@ import {
   Cascader,
   Popup,
   Steps,
-  Step
+  Step,
+  Picker,
+  Popup,
+  NoticeBar
 } from 'vant'
 // 按需引入UI组件
 Vue.use(Button)
@@ -55,3 +58,6 @@ Vue.use(Calendar)
 Vue.use(Step)
 Vue.use(Steps)
 Vue.use(Form)
+Vue.use(Picker)
+Vue.use(Popup)
+Vue.use(NoticeBar)
