@@ -4,7 +4,7 @@
       <van-grid-item text="寻找车辆" to="findcar" :class="{choose: activePage === 1}" />
       <van-grid-item text="成交订单" to="soldorders" :class="{choose: activePage === 2}"/>
       <van-grid-item text="申请资金" />
-      <van-grid-item text="支付资金" />
+      <van-grid-item text="回到首页" to="/"/>
       <van-grid-item text="签收回单" />
       <van-grid-item text="合同冲账" />
     </van-grid>
@@ -24,6 +24,7 @@ export default {
           page = 1
           break
         case 'soldorders':
+        case 'entryreport':
           page = 2
           break
       }

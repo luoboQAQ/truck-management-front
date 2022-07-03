@@ -32,6 +32,11 @@
         label="运输距离"
       />
       <van-field
+        v-model="data.sState"
+        name="sState"
+        label="运输状态"
+      />
+      <van-field
         v-model="data.cName"
         label="司机名称"
       />
@@ -52,7 +57,17 @@
       <van-field
         v-model="data.sNum"
         name="sNum"
-        label="货物数量"
+        label="此次运输数量"
+      />
+      <van-field
+        v-model="data.gNum"
+        name="gNum"
+        label="货物总数量"
+      />
+      <van-field
+        v-model="data.gUnit"
+        name="gUnit"
+        label="货物单位"
       />
       <van-field
         v-model="data.sCost"

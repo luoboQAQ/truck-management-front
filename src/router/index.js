@@ -50,6 +50,11 @@ const routes = [
         name: 'receiveorder',
         props: true,
         component: () => import('@/views/carer/ReceiveOrderView')
+      },
+      {
+        path: '/carer/okorders',
+        name: 'okorders',
+        component: () => import('@/views/carer/OkOrdersView')
       }
     ]
   }

@@ -1,10 +1,10 @@
 <template>
   <nav>
     <van-grid :column-num="3" :clickable="true">
-      <van-grid-item text="寻找货源" to="findgood"/>
-      <van-grid-item text="成交订单" />
+      <van-grid-item text="寻找货源" to="findgood" :class="{choose: activePage === 1}" />
+      <van-grid-item text="成交订单" to="okorders" :class="{choose: activePage === 2}" />
       <van-grid-item text="运输合同" />
-      <van-grid-item text="最新收款" />
+      <van-grid-item text="回到首页" to="/" />
       <van-grid-item text="未结运费" />
       <van-grid-item text="月结对账" />
     </van-grid>
@@ -14,7 +14,23 @@
 
 <script>
 export default {
-  name: 'CarerLayout'
+  name: 'CarerLayout',
+  computed: {
+    activePage () {
+      const name = this.$route.name
+      let page = 0
+      switch (name) {
+        case 'findgood':
+        case 'receiveorder':
+          page = 1
+          break
+        case 'okorders':
+          page = 2
+          break
+      }
+      return page
+    }
+  }
 }
 </script>
 

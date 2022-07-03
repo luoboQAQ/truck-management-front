@@ -5,7 +5,7 @@
       <van-col span="6">（待运输 {{ data.aRemnum }} 吨）</van-col>
     </van-row>
     <van-row type="flex" align="bottom">
-      <van-col span="12" class="time">{{ data.aTransdate | moment('LLL') }}</van-col>
+      <van-col span="12" class="time">{{ data.aTransdate | moment('LL') }}</van-col>
       <van-col span="4" offset="6">
         <van-button
           block
