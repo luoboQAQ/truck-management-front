@@ -101,7 +101,7 @@ export default {
           items: [{ name: '南京', code: '320100' }, { name: '扬州', code: '320101' }]
         },
         {
-          name: '安徽省',
+          name: '安徽',
           code: '310000',
           items: [{ name: '滁州', code: '310100' }, { name: '合肥', code: '310101' }]
         }
@@ -123,7 +123,7 @@ export default {
           items: [{ name: '南京', code: '320100' }, { name: '扬州', code: '320101' }]
         },
         {
-          name: '安徽省',
+          name: '安徽',
           code: '310000',
           items: [{ name: '滁州', code: '310100' }, { name: '合肥', code: '310101' }]
         }

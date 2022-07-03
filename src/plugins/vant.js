@@ -28,7 +28,6 @@ import {
   Steps,
   Step,
   Picker,
-  Popup,
   NoticeBar
 } from 'vant'
 // 按需引入UI组件
