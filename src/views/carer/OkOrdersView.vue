@@ -7,18 +7,18 @@
       :error.sync="error"
       @load="loadData"
     >
-      <OrderCell v-for="(item,index) in list" :key="index" :data="item" />
+      <CarOrderCell v-for="(item,index) in list" :key="index" :data="item" />
     </van-list>
   </div>
 </template>
 
 <script>
-import OrderCell from '@/components/OrderCell'
+import CarOrderCell from '@/components/CarOrderCell'
 import { getAllOrder } from '@/api/order'
 
 export default {
-  name: 'SoldOrdersView',
-  components: { OrderCell },
+  name: 'OkOrdersView',
+  components: { CarOrderCell },
   data () {
     return {
       list: [],

@@ -1,75 +1,78 @@
 <template>
   <div>
-    <van-form @submit="onSubmit">
+    <van-form readonly>
       <van-field
-        v-model="oName"
+        v-model="data.oName"
         name="oName"
         label="客户名称"
-        placeholder="请输入客户名称"
-        :rules="[{ required: true, message: '请填写客户名称' }]"
       />
       <van-field
-        v-model="aTransdate"
+        v-model="data.aTransdate"
         name="aTransdate"
         label="发货日期"
-        placeholder="请输入发货日期"
-        :rules="[{ required: true, message: '请填写发货日期' }]"
       />
       <van-field
-        v-model="aReccom"
+        v-model="data.aReccom"
         name="aReccom"
         label="收货单位"
-        placeholder="收货单位"
-        :rules="[{ required: true, message: '请填写收货单位' }]"
       />
       <van-field
-        v-model="aStart"
+        v-model="data.aStart"
         name="aStart"
         label="出发地"
-        placeholder="出发地"
-        :rules="[{ required: true, message: '请填写出发地' }]"
       />
       <van-field
-        v-model="aEnd"
+        v-model="data.aEnd"
         name="aEnd"
         label="目的地"
-        placeholder="目的地"
-        :rules="[{ required: true, message: '请填写目的地' }]"
       />
       <van-field
-        v-model="aDistance"
+        v-model="data.aDistance"
         name="aDistance"
         label="运输距离"
-        placeholder="运输距离"
-        :rules="[{ required: true, message: '请填写运输距离' }]"
       />
       <van-field
-        v-model="cLicense"
+        v-model="data.sState"
+        name="sState"
+        label="运输状态"
+      />
+      <van-field
+        v-model="data.cName"
+        label="司机名称"
+      />
+      <van-field
+        v-model="data.cCom"
+        label="司机所在公司"
+      />
+      <van-field
+        v-model="data.cLicense"
         name="cLicense"
         label="车号"
-        placeholder="车号"
-        :rules="[{ required: true, message: '请填写车号' }]"
       />
       <van-field
-        v-model="gName"
+        v-model="data.gName"
         name="gName"
         label="货物名称"
-        placeholder="货物名称"
-        :rules="[{ required: true, message: '请填写货物名称' }]"
       />
       <van-field
-        v-model="sNum"
+        v-model="data.sNum"
         name="sNum"
-        label="货物数量"
-        placeholder="货物数量"
-        :rules="[{ required: true, message: '请填写货物数量' }]"
+        label="此次运输数量"
       />
       <van-field
-        v-model="sCost"
+        v-model="data.gNum"
+        name="gNum"
+        label="货物总数量"
+      />
+      <van-field
+        v-model="data.gUnit"
+        name="gUnit"
+        label="货物单位"
+      />
+      <van-field
+        v-model="data.sCost"
         name="sCost"
         label="承运运费"
-        placeholder="承运运费"
-        :rules="[{ required: true, message: '请填写承运运费' }]"
       />
       <van-row style="margin-top: 18px;">
         <van-col span="8" offset="2">
@@ -80,7 +83,7 @@
         </van-col>
       </van-row>
     </van-form>
-    <van-dialog v-model="showDialog" title="评分" show-cancel-button>
+    <van-dialog v-model="showDialog" title="评分" show-cancel-button @confirm="setFeedBack">
       <p style="text-align:center">喜欢这位司机？不妨为他送上好评哦🥰</p>
       <van-field name="rate" label="评价">
         <template #input>
@@ -92,28 +95,62 @@
 </template>
 
 <script>
+import { selectBySid } from '@/api/full'
+import { addFeedBack } from '@/api/car'
+
 export default {
   name: 'EntryReportView',
+  props: {
+    sId: {
+      type: Number,
+      default: 1
+    }
+  },
   data () {
     return {
-      oName: '',
-      aTransdate: '',
-      aReccom: '',
-      aStart: '',
-      aEnd: '',
-      aDistance: '',
-      cLicense: '',
-      gName: '',
-      sNum: '',
-      sCost: '',
+      data: {
+        oName: '',
+        aTransdate: '',
+        aReccom: '',
+        aStart: '',
+        aEnd: '',
+        aDistance: '',
+        cLicense: '',
+        cCom: '',
+        gName: '',
+        sNum: '',
+        sCost: ''
+      },
       showDialog: false,
       rate: 5
     }
   },
   methods: {
-    onSubmit (values) {
-      console.log('submit', values)
+    setFeedBack () {
+      let isGood = false
+      if (this.rate > 3) {
+        isGood = true
+      } else if (this.rate === 3) {
+        this.$toast.success('操作成功')
+        return
+      }
+      addFeedBack(this.data.cId, isGood).then(res => {
+        if (res.code === 200) {
+          this.$toast.success('操作成功')
+        } else {
+          this.$toast.fail('操作失败')
+        }
+      })
     }
+  },
+  mounted () {
+    selectBySid(this.sId).then(res => {
+      if (res.code === 200) {
+        this.data = res.data
+      } else {
+        this.$toast.fail('数据读入错误')
+      }
+    })
   }
 }
 </script>

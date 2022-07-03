@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import LoginView from '@/views/LoginView'
 import OwnerLayout from '@/layouts/OwnerLayout'
+import CarerLayout from '@/layouts/CarerLayout'
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,7 @@ const routes = [
       {
         path: '/owner/entryreport',
         name: 'entryreport',
+        props: true,
         component: () => import('@/views/owner/EntryReportView')
       }
     ]
@@ -47,16 +49,30 @@ const routes = [
     path: '/',
     name: 'login',
     component: LoginView
+  }, {
+    path: '/carer',
+    name: 'CarerLayout',
+    redirect: '/carer/findgood',
+    component: CarerLayout,
+    children: [
+      {
+        path: '/carer/findgood',
+        name: 'findgood',
+        component: () => import('@/views/carer/FindGoodView')
+      },
+      {
+        path: '/carer/receiveorder',
+        name: 'receiveorder',
+        props: true,
+        component: () => import('@/views/carer/ReceiveOrderView')
+      },
+      {
+        path: '/carer/okorders',
+        name: 'okorders',
+        component: () => import('@/views/carer/OkOrdersView')
+      }
+    ]
   }
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  // }
 ]
 
 const router = new VueRouter({

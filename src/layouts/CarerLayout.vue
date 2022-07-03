@@ -1,12 +1,12 @@
 <template>
   <nav>
     <van-grid :column-num="3" :clickable="true">
-      <van-grid-item text="寻找车辆" to="findcar" :class="{choose: activePage === 1}" />
-      <van-grid-item text="成交订单" to="soldorders" :class="{choose: activePage === 2}"/>
-      <van-grid-item text="申请资金" to="fundapp"  :class="{choose: activePage === 3}"/>
-      <van-grid-item text="回到首页" to="/"/>
-      <van-grid-item text="签收回单" to="signback"  :class="{choose: activePage === 4}"/>
-      <van-grid-item text="合同冲账" />
+      <van-grid-item text="寻找货源" to="findgood" :class="{choose: activePage === 1}" />
+      <van-grid-item text="成交订单" to="okorders" :class="{choose: activePage === 2}" />
+      <van-grid-item text="运输合同" />
+      <van-grid-item text="回到首页" to="/" />
+      <van-grid-item text="未结运费" />
+      <van-grid-item text="月结对账" />
     </van-grid>
     <router-view />
   </nav>
@@ -14,24 +14,18 @@
 
 <script>
 export default {
-  name: 'OwnerLayout',
+  name: 'CarerLayout',
   computed: {
     activePage () {
       const name = this.$route.name
       let page = 0
       switch (name) {
-        case 'findcar':
+        case 'findgood':
+        case 'receiveorder':
           page = 1
           break
-        case 'soldorders':
-        case 'entryreport':
+        case 'okorders':
           page = 2
-          break
-        case 'fundapp':
-          page = 3
-          break
-        case 'signback':
-          page = 4
           break
       }
       return page

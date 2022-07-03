@@ -7,18 +7,18 @@
       :error.sync="error"
       @load="loadData"
     >
-      <OrderCell v-for="(item,index) in list" :key="index" :data="item" />
+      <GoodCell v-for="(item,index) in list" :key="index" :data="item" />
     </van-list>
   </div>
 </template>
 
 <script>
-import OrderCell from '@/components/OrderCell'
-import { getAllOrder } from '@/api/order'
+import GoodCell from '@/components/GoodCell'
+import { selectByaState } from '@/api/aggrement'
 
 export default {
-  name: 'SoldOrdersView',
-  components: { OrderCell },
+  name: 'FindGoodView',
+  components: { GoodCell },
   data () {
     return {
       list: [],
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     loadData () {
-      getAllOrder(this.page, 5).then(res => {
+      selectByaState(this.page, 5, '匹配中').then(res => {
         if (res.code === 200) {
           this.list.push(...res.data)
           this.finished = !res.hasNextPage
